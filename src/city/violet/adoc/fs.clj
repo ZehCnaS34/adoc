@@ -1,8 +1,9 @@
-(ns juxt.adoc.fs
+(ns city.violet.adoc.fs
+  (:require [clojure.java.io :as io])
   (:import java.io.File))
 
 (defn find-adoc [path]
-  (->> (File. path)
+  (->> (io/file path)
        file-seq
        (filter #(.isFile %))
        (map #(.getPath %))
@@ -18,6 +19,6 @@
     (.getPath book-file)))
 
 (defn get-adoc [path]
-  (if (.isDirectory (File. path))
+  (if (.isDirectory (io/file path))
     (slurp (merge-all (find-adoc path)))
     (slurp path)))

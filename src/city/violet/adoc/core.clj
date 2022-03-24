@@ -1,9 +1,7 @@
-;; Copyright © 2016, JUXT LTD.
-
-(ns juxt.adoc.core
+(ns city.violet.adoc.core
   (:require
    [camel-snake-kebab.core :refer [->kebab-case-keyword]]
-   [juxt.adoc.fs :as fs]
+   [city.violet.adoc.fs :as fs]
    [clojure.java.io :as io])
   (:import
    (java.util HashMap Collections)
